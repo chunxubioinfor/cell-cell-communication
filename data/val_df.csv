@@ -1,0 +1,187 @@
+,symbol,id
+1,N glycan biosynthesis,hsa00510
+2,Other glycan degradation,hsa00511
+3,O glycan biosynthesis,hsa00512
+4,Glycosaminoglycan degradation,hsa00531
+5,Glycosaminoglycan biosynthesis keratan sulfate,hsa00533
+6,Glycerolipid metabolism,hsa00561
+7,Glycosylphosphatidylinositol gpi anchor biosynthesis,hsa00563
+8,Glycerophospholipid metabolism,hsa00564
+9,Ether lipid metabolism,hsa00565
+10,Arachidonic acid metabolism,hsa00590
+11,Linoleic acid metabolism,hsa00591
+12,Alpha linolenic acid metabolism,hsa00592
+13,Sphingolipid metabolism,hsa00600
+14,Glycosphingolipid biosynthesis lacto and neolacto series,hsa00601
+15,Glycosphingolipid biosynthesis globo series,hsa00603
+16,Glycosphingolipid biosynthesis ganglio series,hsa00604
+17,Riboflavin metabolism,hsa00740
+18,Nicotinate and nicotinamide metabolism,hsa00760
+19,Pantothenate and coa biosynthesis,hsa00770
+20,Aminoacyl trna biosynthesis,hsa00970
+21,Basal transcription factors,hsa03022
+22,Non homologous end joining,hsa03450
+23,Snare interactions in vesicular transport,hsa04130
+24,Lysosome,hsa04142
+25,Cardiac muscle contraction,hsa04260
+26,Renin angiotensin system,hsa04614
+27,Circadian rhythm mammal,hsa04710
+28,Taste transduction,hsa04742
+29,Proximal tubule bicarbonate reclamation,hsa04964
+30,Pathogenic escherichia coli infection,hsa05130
+31,Systemic lupus erythematosus,hsa05322
+32,Primary immunodeficiency,hsa05340
+33,Hypertrophic cardiomyopathy hcm,hsa05410
+34,Arrhythmogenic right ventricular cardiomyopathy arvc,hsa05412
+35,Dilated cardiomyopathy,hsa05414
+36,Glycolysis gluconeogenesis,hsa00010
+37,Citrate cycle tca cycle,hsa00020
+38,Pentose phosphate pathway,hsa00030
+39,Pentose and glucuronate interconversions,hsa00040
+40,Fructose and mannose metabolism,hsa00051
+41,Galactose metabolism,hsa00052
+42,Ascorbate and aldarate metabolism,hsa00053
+43,Fatty acid metabolism,hsa01212
+44,Steroid biosynthesis,hsa00100
+45,Primary bile acid biosynthesis,hsa00120
+46,Steroid hormone biosynthesis,hsa00140
+47,Oxidative phosphorylation,hsa00190
+48,Purine metabolism,hsa00230
+49,Pyrimidine metabolism,hsa00240
+50,Alanine aspartate and glutamate metabolism,hsa00250
+51,Glycine serine and threonine metabolism,hsa00260
+52,Cysteine and methionine metabolism,hsa00270
+53,Valine leucine and isoleucine degradation,hsa00280
+54,Valine leucine and isoleucine biosynthesis,hsa00290
+55,Lysine degradation,hsa00310
+56,Arginine and proline metabolism,hsa00330
+57,Histidine metabolism,hsa00340
+58,Tyrosine metabolism,hsa00350
+59,Phenylalanine metabolism,hsa00360
+60,Tryptophan metabolism,hsa00380
+61,Beta alanine metabolism,hsa00410
+62,Taurine and hypotaurine metabolism,hsa00430
+63,Selenoamino acid metabolism,hsa00450
+64,Glutathione metabolism,hsa00480
+65,Starch and sucrose metabolism,hsa00500
+66,Amino sugar and nucleotide sugar metabolism,hsa00520
+67,Glycosaminoglycan biosynthesis chondroitin sulfate,hsa00532
+68,Glycosaminoglycan biosynthesis heparan sulfate,hsa00534
+69,Inositol phosphate metabolism,hsa00562
+70,Pyruvate metabolism,hsa00620
+71,Glyoxylate and dicarboxylate metabolism,hsa00630
+72,Propanoate metabolism,hsa00640
+73,Butanoate metabolism,hsa00650
+74,One carbon pool by folate,hsa00670
+75,Folate biosynthesis,hsa00790
+76,Retinol metabolism,hsa00830
+77,Porphyrin and chlorophyll metabolism,hsa00860
+78,Terpenoid backbone biosynthesis,hsa00900
+79,Limonene and pinene degradation,hsa00903
+80,Nitrogen metabolism,hsa00910
+81,Sulfur metabolism,hsa00920
+82,Metabolism of xenobiotics by cytochrome p450,hsa00980
+83,Drug metabolism cytochrome p450,hsa00982
+84,Drug metabolism other enzymes,hsa00983
+85,Biosynthesis of unsaturated fatty acids,hsa01040
+86,Abc transporters,hsa02010
+87,Ribosome,hsa03010
+88,Rna degradation,hsa03018
+89,Rna polymerase,hsa03020
+90,Dna replication,hsa03030
+91,Spliceosome,hsa03040
+92,Proteasome,hsa03050
+93,Protein export,hsa03060
+94,Ppar signaling pathway,hsa03320
+95,Base excision repair,hsa03410
+96,Nucleotide excision repair,hsa03420
+97,Mismatch repair,hsa03430
+98,Homologous recombination,hsa03440
+99,Mapk signaling pathway,hsa04010
+100,Erbb signaling pathway,hsa04012
+101,Calcium signaling pathway,hsa04020
+102,Cytokine cytokine receptor interaction,hsa04060
+103,Chemokine signaling pathway,hsa04062
+104,Phosphatidylinositol signaling system,hsa04070
+105,Neuroactive ligand receptor interaction,hsa04080
+106,Cell cycle,hsa04110
+107,Oocyte meiosis,hsa04114
+108,P53 signaling pathway,hsa04115
+109,Ubiquitin mediated proteolysis,hsa04120
+110,Regulation of autophagy,hsa04140
+111,Endocytosis,hsa04144
+112,Peroxisome,hsa04146
+113,Mtor signaling pathway,hsa04150
+114,Apoptosis,hsa04210
+115,Vascular smooth muscle contraction,hsa04270
+116,Wnt signaling pathway,hsa04310
+117,Dorso ventral axis formation,hsa04320
+118,Notch signaling pathway,hsa04330
+119,Hedgehog signaling pathway,hsa04340
+120,Tgf beta signaling pathway,hsa04350
+121,Axon guidance,hsa04360
+122,Vegf signaling pathway,hsa04370
+123,Focal adhesion,hsa04510
+124,Ecm receptor interaction,hsa04512
+125,Cell adhesion molecules cams,hsa04514
+126,Adherens junction,hsa04520
+127,Tight junction,hsa04530
+128,Gap junction,hsa04540
+129,Complement and coagulation cascades,hsa04610
+130,Antigen processing and presentation,hsa04612
+131,Toll like receptor signaling pathway,hsa04620
+132,Nod like receptor signaling pathway,hsa04621
+133,Rig i like receptor signaling pathway,hsa04622
+134,Cytosolic dna sensing pathway,hsa04623
+135,Jak stat signaling pathway,hsa04630
+136,Hematopoietic cell lineage,hsa04640
+137,Natural killer cell mediated cytotoxicity,hsa04650
+138,T cell receptor signaling pathway,hsa04660
+139,B cell receptor signaling pathway,hsa04662
+140,Fc epsilon ri signaling pathway,hsa04664
+141,Fc gamma r mediated phagocytosis,hsa04666
+142,Leukocyte transendothelial migration,hsa04670
+143,Intestinal immune network for iga production,hsa04672
+144,Long term potentiation,hsa04720
+145,Neurotrophin signaling pathway,hsa04722
+146,Long term depression,hsa04730
+147,Olfactory transduction,hsa04740
+148,Regulation of actin cytoskeleton,hsa04810
+149,Insulin signaling pathway,hsa04910
+150,Gnrh signaling pathway,hsa04912
+151,Progesterone mediated oocyte maturation,hsa04914
+152,Melanogenesis,hsa04916
+153,Adipocytokine signaling pathway,hsa04920
+154,Type ii diabetes mellitus,hsa04930
+155,Type i diabetes mellitus,hsa04940
+156,Maturity onset diabetes of the young,hsa04950
+157,Aldosterone regulated sodium reabsorption,hsa04960
+158,Vasopressin regulated water reabsorption,hsa04962
+159,Alzheimers disease,hsa05010
+160,Parkinsons disease,hsa05012
+161,Amyotrophic lateral sclerosis als,hsa05014
+162,Huntingtons disease,hsa05016
+163,Prion diseases,hsa05020
+164,Vibrio cholerae infection,hsa05110
+165,Epithelial cell signaling in helicobacter pylori infection,hsa05120
+166,Leishmania infection,hsa05140
+167,Pathways in cancer,hsa05200
+168,Colorectal cancer,hsa05210
+169,Renal cell carcinoma,hsa05211
+170,Pancreatic cancer,hsa05212
+171,Endometrial cancer,hsa05213
+172,Glioma,hsa05214
+173,Prostate cancer,hsa05215
+174,Thyroid cancer,hsa05216
+175,Basal cell carcinoma,hsa05217
+176,Melanoma,hsa05218
+177,Bladder cancer,hsa05219
+178,Chronic myeloid leukemia,hsa05220
+179,Acute myeloid leukemia,hsa05221
+180,Small cell lung cancer,hsa05222
+181,Non small cell lung cancer,hsa05223
+182,Asthma,hsa05310
+183,Autoimmune thyroid disease,hsa05320
+184,Allograft rejection,hsa05330
+185,Graft versus host disease,hsa05332
+186,Viral myocarditis,hsa05416
