@@ -106,3 +106,17 @@ ggsave(filename = paste0(result_folder,"z_score_d_ranking_thr.png"))
 
 
 ## To be continued 
+z_score_R <- function(ocMat,cor_or_not_mtx,receptor){
+  correlated_pathways <- rownames(cor_or_not_mtx)[cor_or_not_mtx[,receptor] == "TRUE"]
+  mu <- mean(ocMat,na.rm = TRUE)
+  sigma <- sd(ocMat,na.rm = TRUE)
+  ocMat_subset <- ocMat[correlated_pathways,correlated_pathways]
+  score <- mean(ocMat_subset,na.rm = TRUE)
+  z_score <- (score-mu)/sigma
+  print(z_score)
+}
+
+eg_R <- c('FZD2','FZD6','FZD9','TLR4','ITGA7','ROR2','CD8A')
+for (receptor in eg_R){
+  z_score_R(ocMat,cor_or_not_mtx,receptor)
+}
