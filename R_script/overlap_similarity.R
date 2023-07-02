@@ -83,6 +83,7 @@ z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
 z_score_p
 ggsave(filename = paste0(result_folder,"z_score_d_cut_off.png"))
 
+
 pb <- progress_bar$new(total = 4)
 z_score_ls <- list()
 for (top in c(1,5,10,25)){
@@ -103,19 +104,5 @@ z_score_p
 ggsave(filename = paste0(result_folder,"z_score_d_ranking_thr.png"))
 
 
-## visualize the z score
-z_score_df <- do.call(rbind,z_score_ls)
-z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
-  geom_density(position="identity")+
-  scale_fill_discrete_qualitative(palette = "cold")
-z_score_p
-ggsave(filename = paste0(result_folder,'./z_score_v1.png'))
-z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
-  geom_density(position="identity")+
-  scale_fill_brewer(palette = "Set3")+
-  theme_minimal()
-
 
 ## To be continued 
-
-cp_gene_sets <- clusterProfiler::read.gmt(paste0(data_folder,'c2.cp.v2022.1.Hs.symbols.gmt'))
