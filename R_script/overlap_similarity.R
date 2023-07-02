@@ -10,12 +10,15 @@ library(proxy)
 library(ggplot2)
 library(progress)
 library(colorspace)
+library(clusterProfiler)
 
 ## Getting a list where each entry is the genes in a pathway 
 ## and the name of that entry is the name of the pathway
-cp_gs_ls <- cogena::gmt2list('c2.cp.v2022.1.Hs.symbols.gmt')
-h_gs_ls <- cogena::gmt2list('h.all.v2022.1.Hs.symbols.gmt')
-go_gs_ls <- cogena::gmt2list('go.slim.v2023.1.Hs.symbols.gmt')
+data_folder <- '/Users/hanchunxu/Desktop/cell_cell_comm/data/'
+result_folder <- '/Users/hanchunxu/Desktop/cell_cell_comm/result/'
+cp_gs_ls <- cogena::gmt2list(paste0(data_folder,'c2.cp.v2022.1.Hs.symbols.gmt'))
+h_gs_ls <- cogena::gmt2list(paste0(data_folder,'h.all.v2022.1.Hs.symbols.gmt'))
+go_gs_ls <- cogena::gmt2list(paste0(data_folder,'go.slim.v2023.1.Hs.symbols.gmt'))
 gsOi <- c(cp_gs_ls,h_gs_ls,go_gs_ls)
 
 ## Generating the binary matrix
@@ -29,7 +32,7 @@ gsMat <- do.call(
 colnames(gsMat) <- names(gsOi)
 rownames(gsMat) <- allGenes
 dim(gsMat) # 19515 * 3152
-saveRDS(gsMat,'./gsMat.rds')
+saveRDS(gsMat,paste0(result_folder,'gsMat.rds'))
 
 ## Calculating the overlap coefficient matrix
 jcMat <- as.matrix(dist(t(gsMat), method = 'binary'))
@@ -60,30 +63,53 @@ tmp_p <- ggplot(tmp_df,aes(x=z_score)) +
 
 
 ## Iterate all the algorithms
-pb <- progress_bar$new(total = 19)
+cor_matrix_subset <- readRDS(paste0(result_folder,'cor_mtx_curation_sub.rds'))
+pb <- progress_bar$new(total = 15)
 z_score_ls <- list()
 for (cut_off in seq(0.2, 0.9, 0.05)) {
   cor_or_not_mtx <- correlated_or_not_mtx(cor_matrix_subset,'cut_off',cut_off,'receptor')
   z_score_df <- calc_z_score(ocMat,cor_or_not_mtx)
-  df_name <- paste('z_score_df',cut_off,sep = '_')
+  df_name <- as.character(cut_off)
   z_score_df$algorithm <- rep(df_name,nrow(z_score_df))
   z_score_ls[[df_name]] <- z_score_df
   pb$tick()
 }
+z_score_df <- do.call(rbind,z_score_ls)
+z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
+  geom_density(position="identity")+
+  scale_fill_discrete_qualitative(palette = "Set3") +
+  guides(alpha = FALSE,fill=guide_legend(title = "cut-off"))+
+  theme_minimal()
+z_score_p
+ggsave(filename = paste0(result_folder,"z_score_d_cut_off.png"))
+
+pb <- progress_bar$new(total = 4)
+z_score_ls <- list()
 for (top in c(1,5,10,25)){
   cor_or_not_mtx <- correlated_or_not_mtx(cor_matrix_subset,'top',top,'receptor')
   z_score_df <- calc_z_score(ocMat,cor_or_not_mtx)
-  df_name <- paste('z_score_df',top,sep = '_')
+  df_name <- as.character(top)
   z_score_df$algorithm <- rep(df_name,nrow(z_score_df))
   z_score_ls[[df_name]] <- z_score_df
   pb$tick()
 }
+z_score_df <- do.call(rbind,z_score_ls)
+z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=factor(algorithm,levels = c('1','5','10','25')),alpha=1/10)) +
+  geom_density(position="identity")+
+  scale_fill_discrete_qualitative(palette = "Set3") +
+  guides(alpha = FALSE,fill=guide_legend(title = "ranking-threshold"))+
+  theme_minimal()
+z_score_p
+ggsave(filename = paste0(result_folder,"z_score_d_ranking_thr.png"))
+
 
 ## visualize the z score
 z_score_df <- do.call(rbind,z_score_ls)
 z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
   geom_density(position="identity")+
   scale_fill_discrete_qualitative(palette = "cold")
+z_score_p
+ggsave(filename = paste0(result_folder,'./z_score_v1.png'))
 z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
   geom_density(position="identity")+
   scale_fill_brewer(palette = "Set3")+
@@ -92,3 +118,4 @@ z_score_p <- ggplot(z_score_df,aes(x=z_score,fill=algorithm,alpha=1/10)) +
 
 ## To be continued 
 
+cp_gene_sets <- clusterProfiler::read.gmt(paste0(data_folder,'c2.cp.v2022.1.Hs.symbols.gmt'))
